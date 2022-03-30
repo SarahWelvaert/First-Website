@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Yoga Classes{% endblock %}
+
+{% block content %}
+<h1>Good Vibes Yoga</h1>
+<div class="container">
+    <div class="row">
+
+    <div class="col-xs-12 col-sm-6 col-lg-4 col-xlg-3">
+        <!-- <h2>Good Vibes Yoga</h2> -->
+
+       <figure>
+           <img class= "dino-image img-fluid" src="{{url_for('static', filename='images/' + dinosaurs[dino]['image'])}}" alt="{{dino}}">
+           <!-- <figcaption>{{dinosaurs[dino]['image-credit']}}</figcaption> -->
+       </figure>
+     
+       </div>
+       <button type="submit" value="Submit">Go to classes</button>
+    </div>
+</div>
+{% endblock %}
