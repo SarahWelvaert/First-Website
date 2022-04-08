@@ -1,11 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}Add a class {% endblock %}
-{% if class_id is defined %}
-{% set yoga_class = yoga_class %}
-{% else %}
-{% set yoga_class = {name:" ",type: " ", level: " ",date: " ", duration: " ", trainer:" ", dscription: " "} %}
-{% endif %}
+
 {% block content %}
 
     <h1> Add a class</h1>
@@ -14,36 +10,31 @@
 
         <div>
             <label for="name">Name</label>
-            <input type="text" value="{{ yoga_class['name'] }}" id="name" name="name">
+            <input type="text" value="<"id="name" name="name">
         </div>    
         <div>
             <label for="type">Type</label>
-            <input type="text" value="{{ yoga_class['type'] }}" id="type" name="type">
+            <input type="text" id="type" name="type">
         </div>  
         <div>
             <label for="level">Level</label>
-            <select value="{{ yoga_class['level'] }}" id="level" name="level">
-                <option selected>Class Level</option>
-                <option selected>Beginner</option>
-                <option selected>Intermediate</option>
-                <option selected>Advanced</option>
-            </select>
+            <input type="text" id="level" name="level">
         </div> 
         <div>
             <label for="date">Date</label>
-            <input type="text" value="{{ yoga_class['date'] }}" id="date" name="date">
+            <input type="text" id="date" name="date">
         </div> 
         <div>
             <label for="duration">Duration</label>
-            <input type="text" value="{{ yoga_class['duration']}}" id="duration" name="duration">
+            <input type="text" id="duration" name="duration">
         </div> 
         <div>
             <label for="trainer">Trainer</label>
-            <input type="text" value="{{ yoga_class['trainer']}}" id="trainer" name="trainer">
+            <input type="text" id="trainer" name="trainer">
         </div> 
         <div>
             <label for="description">Description</label>
-            <input type="text" value="{{ yoga_class['description']}}" id="description" name="description">
+            <input type="text" id="description" name="description">
         </div>
         <button type="submit" value="Submit">Submit</button>
         <button type="reset" value="reset">Reset</button>

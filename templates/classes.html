@@ -32,13 +32,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <a href="{{url_for('classes',class_id = classes.index(yoga_class))}}">{{ yoga_class.name }}</a>
+      <a href="{{url_for('view_classes',class_id = classes.index(yoga_class))}}">{{ yoga_class.name }}</a>
     </div>
     <div class="col-sm">
-      {{ yoga_class['date'] }}
+      {{ yoga_class.date }}
     </div>
     <div class="col-sm">
-      {{ yoga_class['duration'] }}
+      {{ yoga_class.duration }}
     </div>
   </div>
 </div>
@@ -51,6 +51,7 @@
        </p>
       
 {% endfor %}
+<a class="btn btn-primary btn-lg" href="/classes/create" role="button">Add a class</a>
 
     </div>
 </div>

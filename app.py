@@ -25,27 +25,28 @@ def index():
     
     return render_template('index.html')
     
-@app.route('/classes')
-
+@app.route('/classes/')
 def classes():
-        #fill in the logic for the 3 routes
     classes=get_class()
     return render_template('classes.html', classes=classes)
 
-@app.route("/classes/<class_id>")
-def view_class(class_id=None):
+@app.route("/classes/<class_id>/")
+def view_classes(class_id=None):
     if class_id:
         classes = get_class()
+        class_id = int(class_id)
         return render_template('class.html',class_id = class_id, yoga_class = classes[class_id])
+    else:
+        return render_template('classes.html', classes=classes)
 
 
 @app.route("/classes/create", methods=['GET', 'POST'])
 def add_class():
 #     # if POST request received (form submitted)
    if request.method == 'POST':
-       # get dinosaurs.csv data
+       
        classes = get_class()
-       # create new dict to hold dino data from form
+       
        newClass={}
        # add form data to new dict
        
@@ -66,3 +67,40 @@ def add_class():
    # if GET request received (display form)
    else:
        return render_template('class_form.html')
+
+@app.route('/classes/<class_id>/edit', methods=['GET', 'POST'])
+def edit_class(class_id = None):
+    classes = get_class()
+    update_class = {}
+    class_id = int(class_id)
+    if request.method == 'POST':
+       update_class['name'] = request.form['name']
+       update_class['type'] = request.form['type']
+       update_class['level'] = request.form['level']
+       update_class['date'] = request.form['date']
+       update_class['duration'] = request.form['duration']
+       update_class['trainer'] = request.form['trainer']
+       update_class['description'] = request.form['description']
+       # add new dict to csv data
+    #    classes.append(update_class)
+    
+       classes[class_id]['name']= update_class['name']
+       classes[class_id]['type']= update_class['type']
+       classes[class_id]['level']= update_class['level']
+       classes[class_id]['date']= update_class['date']
+       classes[class_id]['duration']= update_class['duration']
+       classes[class_id]['trainer']= update_class['trainer']
+       classes[class_id]['description']= update_class['description']
+
+       # write csv data back out to csv file
+       set_class(classes)
+       # since POST request, redirect after Submit (we want the display to change so user knows form went through)
+       return render_template('class.html',class_id = class_id, yoga_class = classes[class_id])
+    else:
+        if class_id:
+            classes = get_class()
+            class_id = int(class_id)
+            class_name = classes[class_id]
+        return render_template('class_form.html',classes=classes,class_id = class_id, yoga_class = classes[class_id])
+
+   

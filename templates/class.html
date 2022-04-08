@@ -1,12 +1,21 @@
 {% extends "base.html" %}
 
-{% block title %}About {{y_class['name']}}{% endblock %}
+{% block title %}About {{yoga_class}}{% endblock %}
 
 {% block content %}
+</br>
+</br>
+</br>
+</br>
 
 
-<h1>{{y_class['name']}}</h1>
-<p>{{y_class['description']}}</p>
-
+<h1>{{yoga_class['name']}}</h1>
+<p>{{yoga_class['type']}}
+    {{yoga_class['duration']}}
+    {{yoga_class['level']}}
+    {{yoga_class['description']}}
+    {{yoga_class['trainer']}}
+</p>
+<a class="btn btn-primary btn-lg" href="{{url_for('edit_class',class_id=class_id)}}" role="button">Edit class</a>
 
 {% endblock %}
