@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Add a class {% endblock %}
+
+{% block content %}
+
+    <h1> Add a class</h1>
+    
+    <form method="post" name="classes/create">
+
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+        </div>    
+        <div>
+            <label for="type">Type</label>
+            <input type="text" id="type" name="type">
+        </div>  
+        <div>
+            <label for="level">Level</label>
+            <input type="text" id="level" name="level">
+        </div> 
+        <div>
+            <label for="date">Date</label>
+            <input type="text" id="date" name="date">
+        </div> 
+        <div>
+            <label for="duration">Duration</label>
+            <input type="text" id="duration" name="duration">
+        </div> 
+        <div>
+            <label for="trainer">Trainer</label>
+            <input type="text" id="trainer" name="trainer">
+        </div> 
+        <div>
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description">
+        </div>
+        <button type="submit" value="Submit">Submit</button>
+        <button type="reset" value="reset">Reset</button>
+
+
+
+    </form>
+{% endblock %}

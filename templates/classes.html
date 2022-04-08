@@ -28,17 +28,17 @@
 </br>
 
     
-{% for class_id in classes %}
+{% for yoga_class in classes %}
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <a href="{{url_for('classes',class_id = class_id)}}">{{classes[class_id]['name']}}</a>
+      <a href="{{url_for('classes',class_id = classes.index(yoga_class))}}">{{ yoga_class.name }}</a>
     </div>
     <div class="col-sm">
-      {{classes[class_id]['date']}}
+      {{ yoga_class['date'] }}
     </div>
     <div class="col-sm">
-      {{classes[class_id]['duration']}}
+      {{ yoga_class['duration'] }}
     </div>
   </div>
 </div>
