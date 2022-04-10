@@ -1,3 +1,4 @@
+<!-- View Classes -->
 {% extends "base.html" %}
 {% block title %}View Classes{% endblock %}
 
@@ -13,6 +14,7 @@
 </br>
 </br>
 </br>
+<!-- Grid headers -->
 <div class="container">
   <div class="row justify-center-content">
     <div class="col-2"></div>
@@ -30,7 +32,7 @@
 </div>
 </br>
 
-    
+  <!-- Class info for under each header-->
 {% for yoga_class in classes %}
 <div class="container">
   <div class="row justify-center-content">
@@ -53,6 +55,7 @@
 </br>
 </br>
 </br>
+<!-- Button to go to add_class page -->
 <div class="d-flex justify-content-center">
 <a class="btn btn-primary btn-lg" href="{{url_for('add_class')}}" role="button">Add a class</a>
 </div>
