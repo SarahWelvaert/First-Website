@@ -11,4 +11,10 @@ html {
 main > .container {
   padding: 100px 15px 0 !important;
 }
+
+img {
+  display: block;
+  max-width: 75%;
+  height: auto;
+}
   

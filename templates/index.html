@@ -2,23 +2,34 @@
 {% block title %}Good Vibes Yoga{% endblock %}
 
 {% block content %}
+</br>
+</br>
+</br>
+</br>
+<div class="d-flex justify-content-center">
 <h1>Good Vibes Yoga</h1>
-<div class="container d-block mx-auto my-5">
-    <div class="row">
-
-    <div class="col-xs-12 col-sm-6 col-lg-4 col-xlg-3">
-        <!-- <h2>Good Vibes Yoga</h2> -->
+</div>
+</br>
+<div class="container">
+   <div class="row">
 
        <figure>
-           <img class="img-fluid d-block mx-auto my-5" src="static/images/yoga_pic.jpg" alt="Yoga logo">
+           <img class="img-fluid d-block mx-auto my-5" src="static/images/yoga_pic.jpg" style="max-width:20%;" alt="Yoga logo">
            
        </figure>
-       <p>
+   </div>
+   <div class="row text-center">
            <h2>About us</h2>
-           We are a yoga studio located on the Moon that looks to offer the Moon commuinity with all types of yoga.
+   </div>
+   <div class="row text-center">
+       <p>
+           We are a yoga studio located on the Moon that looks to offer the Moon commuinity with all types of yoga. This website allows you
+           to view, edit or add yoga classes.
        </p>
-       </div>
-       <a class="btn btn-primary btn-lg" href="/classes" role="button">Go to classes</a>
-    </div>
+   </div>
+   </div>
+</div>
+<div class="d-flex justify-content-center">
+       <a class="btn btn-primary btn-lg" href="{{url_for('classes',classes=classes)}}" role="button">Go to classes</a>
 </div>
 {% endblock %}

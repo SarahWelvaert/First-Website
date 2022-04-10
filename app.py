@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
+
 import csv
 app = Flask(__name__)
 #global variable for accessing the csv data file
@@ -10,7 +11,11 @@ CLASSES_KEYS = ['name', 'type', 'level', 'date', 'duration', 'trainer', 'descrip
 def get_class():
     with open(YOGA_PATH) as csvfile:
             data = csv.DictReader(csvfile)
+            
+            data = sorted(data, key = lambda row: datetime.strptime(row['date'], "%m/%d/%y"))
             classes_list = list(data)
+            # print(classes_list)
+            
     return classes_list
 
 #function to write out the data to csv

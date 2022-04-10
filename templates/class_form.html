@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Add a class {% endblock %}
+{% block title %}Class Form {% endblock %}
 {% if class_id is defined %}
 {% set yoga_class = yoga_class %}
 {% else %}
@@ -8,83 +8,101 @@
 {% endif %}
 {% block content %}
 
-    <h1> Add a class</h1>
-    
+</br>
+</br>
+</br>
+</br>
+
+</br>
+
     <form method="post" name="classes/create">
-
+    <div class="container justify-center-content">
         <div>
-            <label for="name">Name</label>
-            <input type="text" value="{{ yoga_class['name'] }}" id="name" name="name">
-        </div>    
+            <div class="row">
+                <div class="col">
+                    <label for="name"><b>Name</b></label>
+                </div>
+                <div class="col-10">
+                    <input type="text" value="{{ yoga_class['name'] }}" id="name" name="name">
+                </div>
+            </div>
+        </div> 
+    </br>   
         <div>
-            <label for="type">Type</label>
-            <input type="text" value="{{ yoga_class['type'] }}" id="type" name="type">
+            <div class="row">
+                <div class="col">
+                    <label for="type"><b>Type</b></label>
+                </div>
+                <div class="col-10">
+                    <input type="text" value="{{ yoga_class['type'] }}" id="type" name="type">
+                </div>
+            </div>
         </div>  
+    </br>
         <div>
-            <label for="level">Level</label>
-            <select value="{{ yoga_class['level'] }}" id="level" name="level">
-                <option selected>Class Level</option>
-                <option selected>Beginner</option>
-                <option selected>Intermediate</option>
-                <option selected>Advanced</option>
-            </select>
-        </div> 
+            <div class="row">
+                <div class="col">
+                    <label for="level"><b>Level</b></label>
+                </div>
+                <div class="col-10">
+                    <select value="{{ yoga_class['level'] }}" id="level" name="level">
+                        <option selected>Class Level</option>
+                        <option selected>Beginner</option>
+                        <option selected>Intermediate</option>
+                        <option selected>Advanced</option>
+                    </select>
+                </div>
+            </div> 
+        </br>
         <div>
-            <label for="date">Date</label>
-            <input type="text" value="{{ yoga_class['date'] }}" id="date" name="date">
-        </div> 
-        <div>
-            <label for="duration">Duration</label>
-            <input type="text" value="{{ yoga_class['duration']}}" id="duration" name="duration">
-        </div> 
-        <div>
-            <label for="trainer">Trainer</label>
-            <input type="text" value="{{ yoga_class['trainer']}}" id="trainer" name="trainer">
-        </div> 
-        <div>
-            <label for="description">Description</label>
-            <input type="text" value="{{ yoga_class['description']}}" id="description" name="description">
+            <div class="row">
+                <div class="col">
+                    <label for="date"><b>Date</b> <p><i>*(dd/mm/yy)*</i></p></label>
+                </div>
+                <div class="col-10">
+                    <input type="text" value="{{ yoga_class['date'] }}" id="date" name="date">
+                </div>
+            </div>
         </div>
+    </br> 
+        <div>
+            <div class="row">
+                <div class="col">
+                    <label for="duration"><b>Duration</b></label>
+                </div>
+                <div class="col-10">
+                    <input type="text" value="{{ yoga_class['duration']}}" id="duration" name="duration">
+                </div> 
+            </div>
+        </div>
+    </br>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <label for="trainer"><b>Trainer</b></label>
+                </div>
+                <div class="col-10">
+                    <input type="text" value="{{ yoga_class['trainer']}}" id="trainer" name="trainer">
+                </div> 
+            </div>
+        </div>
+    </br>
+        <div>
+            <div class="row">
+                <div class="col">
+                    <label for="description"><b>Description</b></label>
+                </div>
+                <div class="col-10">
+                    <input type="text" value="{{ yoga_class['description']}}" id="description" name="description">
+                </div>
+            </div>
+        </br>
+        </div>
+        
         <button type="submit" value="Submit">Submit</button>
         <button type="reset" value="reset">Reset</button>
+        
 
-
-
+    </div>
     </form>
-    <!-- <form method="post" name="classes/<class_id>/edit">
-
-        <div>
-            <label for="name">Name</label>
-            <input type="text" value="Class" "id="name" name="name">
-        </div>    
-        <div>
-            <label for="type">Type</label>
-            <input type="text" id="type" name="type">
-        </div>  
-        <div>
-            <label for="level">Level</label>
-            <input type="text" id="level" name="level">
-        </div> 
-        <div>
-            <label for="date">Date</label>
-            <input type="text" id="date" name="date">
-        </div> 
-        <div>
-            <label for="duration">Duration</label>
-            <input type="text" id="duration" name="duration">
-        </div> 
-        <div>
-            <label for="trainer">Trainer</label>
-            <input type="text" id="trainer" name="trainer">
-        </div> 
-        <div>
-            <label for="description">Description</label>
-            <input type="text" id="description" name="description">
-        </div>
-        <button type="submit" value="Submit">Submit</button>
-        <button type="reset" value="reset">Reset</button>
-
-
-
-    </form> -->
 {% endblock %}

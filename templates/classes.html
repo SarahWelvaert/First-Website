@@ -7,20 +7,23 @@
 </br>
 </br>
 </br>
-
+<div class="d-flex justify-content-center">
 <h1>Good Vibes Yoga Classes</h1>
+</div>
 </br>
 </br>
 </br>
 <div class="container">
-  <div class="row">
-    <div class="col-sm">
+  <div class="row justify-center-content">
+    <div class="col-2"></div>
+    
+    <div class="col justify-center-content">
       <b>Name</b>
     </div>
-    <div class="col-sm">
+    <div class="col justify-center-content">
       <b>Date</b>
     </div>
-    <div class="col-sm">
+    <div class="col justify-center-content">
       <b>Duration</b>
     </div>
     </div>
@@ -30,29 +33,29 @@
     
 {% for yoga_class in classes %}
 <div class="container">
-  <div class="row">
-    <div class="col-sm">
+  <div class="row justify-center-content">
+    <div class="col-2"></div>
+    <div class="col justify-center-content">
       <a href="{{url_for('view_classes',class_id = classes.index(yoga_class))}}">{{ yoga_class.name }}</a>
     </div>
-    <div class="col-sm">
+    <div class="col justify-center-content">
       {{ yoga_class.date }}
     </div>
-    <div class="col-sm">
+    <div class="col justify-center-content">
       {{ yoga_class.duration }}
     </div>
   </div>
 </div>
 
-        
-    
-       <p>
-         
-         
-       </p>
+
       
 {% endfor %}
-<a class="btn btn-primary btn-lg" href="/classes/create" role="button">Add a class</a>
-
-    </div>
+</br>
+</br>
+</br>
+<div class="d-flex justify-content-center">
+<a class="btn btn-primary btn-lg" href="{{url_for('add_class')}}" role="button">Add a class</a>
+</div>
+</div>
 </div>
 {% endblock %}
